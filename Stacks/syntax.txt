@@ -1,0 +1,62 @@
+Stack-> stack is linear data structure  follow LIFO(last in first out) principal
+
+Implementation of stack using Array & vector
+
+1)Array=>Based on size limitation follow basics functions /operations [push(),pop(),isEmpty(),underflow(),overflow()]
+2)vector=>no size limitation
+---------- follow three basic operation /function
+--------------------[pop(),push(),top()]
+
+
+===> how to implement stack using vector
+        ------------
+pop()<- |    23    |->pop()
+        ------------
+        |    24    |
+        ------------
+        |    25    |
+        ------------
+        |    26    |
+        ------------
+
+top=1
+
+==>define code with cpp:
+
+
+ #include<iostream>
+#include<vector>
+using namespace std;
+class Stack{
+    vector<int>v;
+    void push(int val){
+        v.push_back(val);
+    }
+    void pop(){
+        v.pop_back();
+    }
+    int top(){
+        return v.[v.size()-1];
+    }
+    bool empty(){
+        return v.size==0;
+    }
+
+};
+int main(){
+    Stack s;
+    s.push(12);
+    s.push(20);
+    s.push(30);
+
+    while (is_empty==0)
+    {
+        cout<<s.top()<<" ";
+        s.pop();
+    }
+    cout<<endl;
+    
+
+return 0;
+    
+}
