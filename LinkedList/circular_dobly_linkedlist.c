@@ -50,3 +50,60 @@ int main()
 
     return 0;
 }
+
+
+//using user input
+
+#include <stdio.h>
+#include <stdlib.h>
+
+// Define structure for node
+struct Node {
+    int data;
+    struct Node *prev;
+    struct Node *next;
+};
+
+int main() {
+    struct Node *head = NULL, *newnode, *temp;
+    int n, i;
+
+    printf("Enter the number of nodes: ");
+    scanf("%d", &n);
+
+    // Create circular doubly linked list
+    for (i = 0; i < n; i++) {
+        newnode = (struct Node *)malloc(sizeof(struct Node));
+        printf("Enter data for node %d: ", i + 1);
+        scanf("%d", &newnode->data);
+        newnode->next = newnode->prev = NULL;
+
+        if (head == NULL) {
+            head = newnode;
+            head->next = head;
+            head->prev = head;
+        } else {
+            temp = head->prev; // last node
+            temp->next = newnode;
+            newnode->prev = temp;
+            newnode->next = head;
+            head->prev = newnode;
+        }
+    }
+
+    // Traversal of circular doubly linked list
+    printf("\nCircular Doubly Linked List elements:\n");
+    temp = head;
+    if (head == NULL) {
+        printf("List is empty.\n");
+        return 0;
+    }
+
+    do {
+        printf("%d ->", temp->data);
+        temp = temp->next;
+    } while (temp != head);
+
+    printf("NULL\n");
+    return 0;
+}
