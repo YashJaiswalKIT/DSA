@@ -20,6 +20,6 @@ int main(){
     printf("Enter the Number:");
     scanf("%d",&number);
     printf("Factorial is %d",factorial(number));
-     printf("\nFibbocci is : %d",Fibbnocci(number));
+    printf("\nFibbocci is : %d",Fibbnocci(number));
     return 0;
 }
