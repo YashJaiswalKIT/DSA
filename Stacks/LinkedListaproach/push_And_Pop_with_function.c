@@ -1,3 +1,5 @@
+//wap to perform stack's operation by using linkedlist approch
+
 #include <stdio.h>
 #include <stdlib.h>
 struct Node {
